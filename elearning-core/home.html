@@ -16,87 +16,88 @@
             </div>
         </div>
     </section>
-	
-	<!--START: CATEGORY_HEADER-->
-	<section class="category-header content-section">
-		<div class="container">
-		    <div class="content tc-pagebuilder">[CONTENT]</div>
-		</div>
-	</section>
-	<!--END: CATEGORY_HEADER-->
+
+    <!--START: CATEGORY_HEADER-->
+    <section class="category-header content-section">
+        <div class="container">
+            <div class="content tc-pagebuilder">[CONTENT]</div>
+        </div>
+    </section>
+    <!--END: CATEGORY_HEADER-->
 
 	<!--START: FEATURE_MENU-->
     <section class="products-section">
-		<div class="container hidden">
-			<div class="row">
-				<h2 class="header-specials"><span>[category_Header-specials]</span></h2>
-			</div>
-		</div>
-		<div class="container">
-			<!--START: CATEGORY_ITEMS-->
-			<div class="product-items product-items-[product-cols-number]">
-				<div id="carousel-sellers" class="carousel slide">
+        <div class="container">
+            
+			<h2 class="header-specials"><span>[category_Header-specials]</span></h2>
+
+			<div class="product-carousel flexslider">
+				<!--START: CATEGORY_ITEMS-->
+				<ul class="product-items slides" data-productcols="[product-cols-number]" >
 					<!--START: ITEM_TEMPLATE_0-->
+					<li>
 					[product_items]
+					</li>
 					<!--END: ITEM_TEMPLATE_0-->
-				</div>
+				</ul>
+				<!--END: CATEGORY_ITEMS-->
 			</div>
-			<!--END: CATEGORY_ITEMS-->
-		</div>
+            
+        </div>
     </section>
 	<!--END: FEATURE_MENU-->
-
-	<!--START: NEW_RELEASES_BLOCK-->
-	<div id="modNewReleases" class="products-section">
-		<div class="container">
-			<h2 class="header-specials"><span>[frame_new-releases]</span></h2>
-
-			<div class="product-carousel">
-				<div class="product-items product-items-4" data-productcols="4" >
-					<!--START: newreleases-->
-					<!--START: newreleases_topitem-->
-					<div>
-						[product_items]
-					</div>
-					<!--END: newreleases_topitem-->
-
-					<!--START: newreleases_item-->
-					<div>
-						[product_items]
-					</div>
-					<!--END: newreleases_item-->
-					<!--END: newreleases-->
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--END: NEW_RELEASES_BLOCK-->
 
 	<!--START: TOP_SELLERS_BLOCK-->
 	<div id="modTopSellers" class="products-section">
 		<div class="container">
 			<h2 class="header-specials"><span>[frame_top-sellers]</span></h2>
 
-			<div class="product-carousel">
-				<div class="product-items product-items-4" data-productcols="4" >
+			<div class="product-carousel flexslider">
+				<ul class="product-items slides" data-productcols="[product-cols-number]" >
 					<!--START: topsellers-->
 					<!--START: topsellers_topitem-->
-					<div>
+					<li>
 						[product_items]
-					</div>
+					</li>
 					<!--END: topsellers_topitem-->
 
 					<!--START: topsellers_item-->
-					<div>
+					<li>
 						[product_items]
-					</div>
+					</li>
 					<!--END: topsellers_item-->
 					<!--END: topsellers-->
-				</div>
+				</ul>
 			</div>
 		</div>
 	</div>
 	<!--END: TOP_SELLERS_BLOCK--> 
+
+	<!--START: NEW_RELEASES_BLOCK-->
+	<div id="modNewReleases" class="products-section">
+		<div class="container">
+			<h2 class="header-specials"><span>[frame_new-releases]</span></h2>
+
+			<div class="product-carousel flexslider">
+				<ul class="product-items slides" data-productcols="[product-cols-number]" >
+					<!--START: newreleases-->
+					<!--START: newreleases_topitem-->
+					<li>
+						[product_items]
+					</li>
+					<!--END: newreleases_topitem-->
+
+					<!--START: newreleases_item-->
+					<li>
+						[product_items]
+					</li>
+					<!--END: newreleases_item-->
+					<!--END: newreleases-->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--END: NEW_RELEASES_BLOCK-->
 
     <!--START: HOMEPAGE_BLOGS-->
 	<div class="homepage-blog-posts products-section">
@@ -141,13 +142,13 @@
 	</div>
     <!--END: HOMEPAGE_BLOGS-->
 
-	<!--START: CATEGORY_FOOTER-->
-	<section class="category-footer content-section">
-		<div class="container">
-		    <div class="content tc-pagebuilder">[CONTENT]</div>
-		</div>
-	</section>
-	<!--END: CATEGORY_FOOTER-->
+    <!--START: CATEGORY_FOOTER-->
+    <section class="category-footer content-section">
+        <div class="container">
+            <div class="content tc-pagebuilder">[CONTENT]</div>
+        </div>
+    </section>
+    <!--END: CATEGORY_FOOTER-->
 
 </section>
 
@@ -176,17 +177,13 @@
 			return (window.innerWidth <= 567) ? 1 :
 				   (window.innerWidth < 992) ? 2 : proCol;
 		}
-		function getItemSize() {
-			var proItem = jQuery("#carousel-sellers .product-item").outerWidth();
-			return proItem;
-		}
 
 		$window.on("load", function () {
 			jQuery('.product-carousel').flexslider({
 				animation: "slide",
 				controlNav: false,
 				keyboard: false,
-				itemWidth: getItemSize(),
+				itemWidth: 210,
 				itemMargin: 0,
 				minItems: getGridSize(), // use function to pull in initial value
 				maxItems: getGridSize() // use function to pull in initial value
@@ -219,28 +216,5 @@
 
 <!--START: template_styles-->
 <link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="assets/templates/common-core/lib/contentbuilder/minimalist-blocks/content.min.css" type="text/css" />
-<style>
-	#homeCarousel .flex-direction-nav a {
-	  color: #fff !important;
-	}
-	
-	#homeCarousel .flex-direction-nav a {
-	  display: block;
-	  width: 30px !important;
-	  height: 60px !important;
-	  margin: -20px -10px 0 !important;
-	  background: #001a2a;
-	  line-height: 60px;
-	}
-	
-	#homeCarousel .flex-direction-nav a:before {
-	  font-size: 25px !important;
-	  padding-left: 7px;
-	}
-	
-	#homeCarousel .flex-direction-nav .flex-next {
-	  text-align: left !important;
-	}
-</style>
+<link href="assets/templates/common-core/lib/contentbuilder/minimalist-blocks/content.min.css" rel="stylesheet" type="text/css" />
 <!--END: template_styles-->
