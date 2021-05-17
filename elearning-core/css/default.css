@@ -7,7 +7,21 @@ body {
     height: 100%;
     flex-direction: column
 }
-
+#skip a
+{
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+#skip a:focus
+{
+position:static;
+width:auto;
+height:auto;
+}
 .page-content {
     flex: 1 0 auto
 }
@@ -288,7 +302,7 @@ section.subcategories_block {
 .btn-default {
     border-color: #d95b43;
     background-color: #d95b43;
-    color: #fff
+    color: #000
 }
 
 .btn-default:hover,.btn-default:focus,.btn-default.focus {
@@ -406,7 +420,7 @@ body.home-page .header-navigation {
     display: inline-block
 }
 #categories-outer .navbar-nav>li {
-    border-left: 2px solid #fff;
+    border-left: 2px solid #000;
     margin-right: 6px;
 }
 #categories-outer .navbar-nav>li:first-child {
@@ -449,7 +463,7 @@ body.home-page .header-navigation {
     font-weight: 400;
     padding: 0 12px;
     line-height: 36px;
-    color: #fff;
+    color: #000;
     text-transform: capitalize
 }
 
@@ -1554,7 +1568,7 @@ ul.payment-icons li.payment-icons-label,ul.social-icons li.social-icons-label {
 .product-item .name a {
     text-transform: none;
     font-family: roboto slab,serif;
-    color: #009e85;
+    color: #00574A;
     font-weight: 400;
     font-size: 16px
 }
@@ -1802,12 +1816,12 @@ span.freeshipping {
     }
 }
 
-.products-section h2,.category-header h2 {
+.products-section h2,.category-header h2,.products-section h1 {
     display: block;
     font-family: roboto slab,serif;
     background: 0 0;
     text-align: center;
-    color: #009e85;
+    color: #00574A;
     font-size: 18px;
     letter-spacing: 0;
     line-height: 36px;
@@ -1818,7 +1832,7 @@ span.freeshipping {
     position: relative
 }
 
-.products-section h2:before,.category-header h2:before {
+.products-section h2:before,.category-header h2:before,.products-section h1:before {
     content: '';
     display: block;
     border-top: double #ccc;
@@ -1830,13 +1844,13 @@ span.freeshipping {
     z-index: -1
 }
 
-.products-section h2 span,.category-header h2 span {
+.products-section h2 span,.category-header h2 span,.products-section h1 span {
     padding: 0 12px;
     background: #fff
 }
 
 @media(max-width: 991px) {
-    .products-section h2 {
+    .products-section h2,.products-section h1 {
         font-size:36px
     }
 }
@@ -2116,7 +2130,7 @@ span.freeshipping {
         max-height: 98%
     }
 
-    .products-section h2,.home-page-content .category-header h3 {
+    .products-section h2,.home-page-content .category-header h3,.products-section h1 {
         font-size: 24px;
         margin-bottom: 15px
     }
